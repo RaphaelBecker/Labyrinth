@@ -24,6 +24,6 @@ public class Walker {
         boolean[][] maze = Maze.generateStandardMaze(10, 10);
         Walker walker = new Walker(maze, 9, 8, new StudentResult());
         System.out.println(walker.walk());
-        Maze.draw(0, 0, walker.maze, walker.visited);
+        Maze.draw(1, 0, walker.maze, walker.visited);
     }
 }

@@ -1,0 +1,182 @@
+<html>
+  <h3 id="labyrinth">Labyrinth</h3>
+  <p>
+    In der Vorlesung haben Sie verschiedene Algorithmen kennengelernt, einen Weg
+    aus einem Labyrinth zu finden. Der einfachste vorgestellte Algorithmus
+    funktioniert dabei nur, wenn man selbst auf keiner <em>Insel</em> das
+    Labyrinth betritt und auch der Ausgang sich auf keiner Insel befindet. Bei
+    dieser Variante tastet man sich so an den Wänden entlang, dass man immer zu
+    seiner rechten Seite eine Wand spürt. Der Walker startet mit Blickrichtung
+    Süden. Implementieren Sie diesen einfachen Algorithmus ohne Beachtung von
+    Inseln. Als zusätzliches Hilfsmittel können Sie die Klasse
+    <code>Maze</code> verwenden, die Ihnen zusammen mit diesem Blatt zur
+    Verfügung gestellt wird. Die Klasse <code>Maze</code> bietet unter anderem
+    folgende Methoden:
+  </p>
+  <ul>
+    <li>
+      <code>boolean[][] generateMaze(int width, int height, int seed)</code>:
+      Diese Methode erzeugt ein zufälliges Labyrinth. Es wird als ein
+      zweidimensionales boolesches Feld mit <strong>width</strong> Spalten und
+      <strong>height</strong> Zeilen repräsentiert. Hat dieses Array an der
+      Stelle
+      <span
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><mrow
+                ><mo>[</mo><mi>x</mi><mo>]</mo><mo>[</mo><mi>y</mi
+                ><mo>]</mo></mrow
+              >[x][y]</math
+            ></span
+          ><span aria-hidden="true" class="katex-html"
+            ><span class="base"
+              ><span
+                style="height: 1em; vertical-align: -0.25em;"
+                class="strut"
+              ></span
+              ><span class="mopen">[</span
+              ><span class="mord mathdefault">x</span
+              ><span class="mclose">]</span><span class="mopen">[</span
+              ><span style="margin-right: 0.03588em;" class="mord mathdefault"
+                >y</span
+              ><span class="mclose">]</span></span
+            ></span
+          ></span
+        ></span
+      >
+      den Wert <code>true</code>, befindet sich im Labyrinth bei den Koordinaten
+      <span
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><mrow
+                ><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi
+                ><mo>)</mo></mrow
+              >(x,y)</math
+            ></span
+          ><span aria-hidden="true" class="katex-html"
+            ><span class="base"
+              ><span
+                style="height: 1em; vertical-align: -0.25em;"
+                class="strut"
+              ></span
+              ><span class="mopen">(</span
+              ><span class="mord mathdefault">x</span
+              ><span class="mpunct">,</span
+              ><span style="margin-right: 0.166667em;" class="mspace"></span
+              ><span style="margin-right: 0.03588em;" class="mord mathdefault"
+                >y</span
+              ><span class="mclose">)</span></span
+            ></span
+          ></span
+        ></span
+      >
+      eine Wand. x geht dabei von links nach rechts und y geht von oben nach
+      unten. Das dritte Argument <strong>seed</strong> wird zum Setzen des
+      Zustandes des Zufallsgenerators verwendet. Dieser wird benötigt, um
+      verschiedene Labyrinthe zu erzeugen. Sie können zum Testen verschiedener
+      Konfigurationen die Parameter <strong>width</strong>,
+      <strong>height</strong> und <strong>seed</strong> in der main() ändern und
+      die Methode beliebig erweitern. Es gibt noch weitere Methoden, die
+      Labyrinthe generieren können. Eine davon wird auch für den public Test
+      benutzt.
+    </li>
+    <li>
+      <code>draw(int x, int y, boolean[][] maze, boolean[][] visited)</code>
+      Diese Methode gibt eine Darstellung des Labyrinths
+      <strong>maze</strong> mit der Person (markiert als roter Punkt) an den
+      Koordinaten
+      <span
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><mrow
+                ><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi
+                ><mo>)</mo></mrow
+              >(x, y)</math
+            ></span
+          ><span aria-hidden="true" class="katex-html"
+            ><span class="base"
+              ><span
+                style="height: 1em; vertical-align: -0.25em;"
+                class="strut"
+              ></span
+              ><span class="mopen">(</span
+              ><span class="mord mathdefault">x</span
+              ><span class="mpunct">,</span
+              ><span style="margin-right: 0.166667em;" class="mspace"></span
+              ><span style="margin-right: 0.03588em;" class="mord mathdefault"
+                >y</span
+              ><span class="mclose">)</span></span
+            ></span
+          ></span
+        ></span
+      >
+      aus. Die in den vorherigen Schritten besuchten Koordinaten können dabei im
+      Feld <strong>visited</strong> übergeben werden.
+    </li>
+  </ul>
+  <p>
+    Der Eingang befindet sich stets links oben im Labyrinth bei den Koordinaten
+    <span
+      ><span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><mrow
+              ><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn
+              ><mo>)</mo></mrow
+            >(1,0)</math
+          ></span
+        ><span aria-hidden="true" class="katex-html"
+          ><span class="base"
+            ><span
+              style="height: 1em; vertical-align: -0.25em;"
+              class="strut"
+            ></span
+            ><span class="mopen">(</span><span class="mord">1</span
+            ><span class="mpunct">,</span
+            ><span style="margin-right: 0.166667em;" class="mspace"></span
+            ><span class="mord">0</span><span class="mclose">)</span></span
+          ></span
+        ></span
+      ></span
+    >, der Ausgang rechts unten im Labyrinth bei den Koordinaten
+    <strong>(width-1, height-2)</strong>. Ein Labyrinth ist niemals kleiner als
+    <span
+      ><span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow
+            >3 \times 3</math
+          ></span
+        ><span aria-hidden="true" class="katex-html"
+          ><span class="base"
+            ><span
+              style="height: 0.72777em; vertical-align: -0.08333em;"
+              class="strut"
+            ></span
+            ><span class="mord">3</span
+            ><span style="margin-right: 0.222222em;" class="mspace"></span
+            ><span class="mbin">×</span
+            ><span
+              style="margin-right: 0.222222em;"
+              class="mspace"
+            ></span></span
+          ><span class="base"
+            ><span
+              style="height: 0.64444em; vertical-align: 0em;"
+              class="strut"
+            ></span
+            ><span class="mord">3</span></span
+          ></span
+        ></span
+      ></span
+    >
+    Zellen.
+  </p>
+  <p>
+    Wenn im generierten Labyrinth kein Weg zum Ausgang existiert, was durchaus
+    vorkommen kann, soll Ihr Programm dies bemerken und sich beenden.
+  </p>
+</html>
