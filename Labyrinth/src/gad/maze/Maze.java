@@ -21,10 +21,10 @@ public class Maze extends Applet {
         }
 
         public void paint(Graphics g) {
-            GradientPaint wallPaint = new GradientPaint(10, 50, Color.DARK_GRAY, getWidth(), 0, Color.DARK_GRAY);
+            GradientPaint wallPaint = new GradientPaint(10, 50, Color.BLACK, getWidth(), 0, Color.DARK_GRAY);
             GradientPaint floorPaint = new GradientPaint(10, 50, Color.WHITE, getWidth(), 0, Color.WHITE);
             GradientPaint pathPaint = new GradientPaint(15, 0, Color.GREEN, getWidth(), 0, Color.LIGHT_GRAY);
-            GradientPaint positionPaint = new GradientPaint(15, 0, Color.RED, getWidth(), 0, Color.LIGHT_GRAY);
+            GradientPaint positionPaint = new GradientPaint(15, 0, Color.BLUE, getWidth(), 0, Color.LIGHT_GRAY);
 
             super.paint(g);
             ((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -53,7 +53,7 @@ public class Maze extends Applet {
         r.sol = sol;
     }
 
-    private JFrame myFrame = new JFrame("Spielfeld");
+    private JFrame myFrame = new JFrame("Labyrinth");
     private JPanel pan = new JPanel();
     private boolean[][] spielFeld;
     private int posx, posy;
