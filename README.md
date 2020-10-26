@@ -1,14 +1,3 @@
 # Labyrinth
 Labyrinth
-In der Vorlesung haben Sie verschiedene Algorithmen kennengelernt, einen Weg aus einem Labyrinth zu finden. Der einfachste vorgestellte Algorithmus funktioniert dabei nur, wenn man selbst auf keiner Insel das Labyrinth betritt und auch der Ausgang sich auf keiner Insel befindet. Bei dieser Variante tastet man sich so an den Wänden entlang, dass man immer zu seiner rechten Seite eine Wand spürt. Der Walker startet mit Blickrichtung Süden. Implementieren Sie diesen einfachen Algorithmus ohne Beachtung von Inseln. Als zusätzliches Hilfsmittel können Sie die Klasse Maze verwenden, die Ihnen zusammen mit diesem Blatt zur Verfügung gestellt wird. Die Klasse Maze bietet unter anderem folgende Methoden:
-
-boolean[][] generateMaze(int width, int height, int seed): Diese Methode erzeugt ein zufälliges Labyrinth. Es wird als ein zweidimensionales boolesches Feld mit width Spalten und height Zeilen repräsentiert. Hat dieses Array an der Stelle [x][y][x][y][x][y] den Wert true, befindet sich im Labyrinth bei den Koordinaten (x,y)(x,y)(x,y) eine Wand. x geht dabei von links nach rechts und y geht von oben nach unten. Das dritte Argument seed wird zum Setzen des Zustandes des Zufallsgenerators verwendet. Dieser wird benötigt, um verschiedene Labyrinthe zu erzeugen. Sie können zum Testen verschiedener Konfigurationen die Parameter width, height und seed in der main() ändern und die Methode beliebig erweitern. Es gibt noch weitere Methoden, die Labyrinthe generieren können. Eine davon wird auch für den public Test benutzt.
-draw(int x, int y, boolean[][] maze, boolean[][] visited) Diese Methode gibt eine Darstellung des Labyrinths maze mit der Person (markiert als roter Punkt) an den Koordinaten (x,y)(x, y)(x,y) aus. Die in den vorherigen Schritten besuchten Koordinaten können dabei im Feld visited übergeben werden.
-Der Eingang befindet sich stets links oben im Labyrinth bei den Koordinaten (1,0)(1,0)(1,0), der Ausgang rechts unten im Labyrinth bei den Koordinaten (width-1, height-2). Ein Labyrinth ist niemals kleiner als 3×33 \times 33×3 Zellen.
-
-Wenn im generierten Labyrinth kein Weg zum Ausgang existiert, was durchaus vorkommen kann, soll Ihr Programm dies bemerken und sich beenden.
-
- Walk 0 of 8 tests passing
-Implementieren Sie die Methode walk in der Klasse Walker, welche vom Startpunkt (1,0)(1,0)(1,0) aus immer entlang der rechten Wand weitergeht. Ist das Ziel erreichbar soll die Methode walk true zurückgeben, ansonsten false. Tragen Sie die Besuchten Positionen in der richtigen Reihenfolge im mitgegebenen Objekt vom Interface Result ein. Sollten Sie sich nur auf der Stelle drehen, soll das Feld nicht erneut eingetragen werden. Achten Sie darauf alle besuchten Felder einzutragen, also auch den Start und das Ziel bzw. erneut den Start, wenn das Ziel nicht erreichbar ist. Sie können die Klasse Walker beliebig erweitern.
- Public Test 0 of 1 tests passing
-Hier wird das Labyrinth getestet, das man mit Maze.generateStandardMaze() erhält. Man kann hier den Ausgang finden.
+This project ia a short homework from university. It implements an very easy pathfinding algorithm.
